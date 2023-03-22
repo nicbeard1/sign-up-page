@@ -1,0 +1,92 @@
+<?php
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+
+session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>GibJohn Tutoring</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+            <div class="container px-4">
+                <a class="navbar-brand" href="#page-top">GibJohn Tutoring</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="subjects.html">Subjects we teach</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="bg-primary bg-gradient text-royal_blue">
+            <div class="container px-4 text-center">
+                <h1 class="fw-bolder">Welcome to GibJohn Tutoring</h1>
+                <p class="lead">Signing up to our services allows you to access our many resources, including the ability to book a session or series of sessions with our tutors. Sign up with us to find out more! </p>
+                
+            </div>
+        </header>
+        <br>
+        <!-- centre alignment -->
+        <style>
+        form {text-align: center;}
+        </style>
+
+<!-- signup form -->
+        <section id="signup">
+            
+            <form action="home.php" method="POST">
+                <h1>Sign up!</h1>
+                <label for="email">email:</label><br>
+                <input type="text" id="email" name="email" value=""><br>
+                <label for="password">password:</label><br>
+                <input type="text" id="password" name="password" value=""><br>
+                <label for="password">Confirm Password:</label><br>
+                <input type="text" id="password" name="password" value=""><br>
+                
+                <div class="dropdown">
+                    <button class="dropbtn">Select place of education</button>
+                    <div class="dropdown-content">
+                        <a href="primary_home.php">Primary</a>
+                        <a href="secondary_home.php">Secondary</a>
+                        <a href="college_home.php">College</a>
+                        <a href="university_home.php">University</a>
+                    </div>
+                </div>
+            
+            <input type="text" value="Coming soon!">
+            </form>
+        </section>
+
+        <?php
+        if (isset($_SESSION['login_error_msg'])) {
+        echo "<p>" . $_SESSION['login_error_msg'] . "</p>";
+        unset($_SESSION['login_error_msg']);
+        }
+        
+        ?>
+    
+<!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container px-4"><p class="m-0 text-center text-white">Copyright &copy; GibJohn Tutoring 2023</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>  
+</html>
